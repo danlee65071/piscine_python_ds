@@ -22,5 +22,7 @@ cleaner()
   print $0}'
 }
 
-head -n 1 "../ex02/hh_sorted.csv" > hh_positions.csv
-cat < "../ex02/hh_sorted.csv" | while read -r; do cleaner >> hh_positions.csv; done
+cp ../ex02/hh_sorted.csv .
+head -n 1 hh_sorted.csv > hh_positions.csv
+cat < hh_sorted.csv | while read -r; do cleaner >> hh_positions.csv; done
+rm -rf hh_sorted.csv
