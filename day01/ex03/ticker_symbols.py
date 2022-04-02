@@ -25,8 +25,7 @@ def ticker_symbols():
     if len(sys.argv) != 2:
         return
     cmp_stocks_name = sys.argv[1].upper()
-    stocks_names = [*STOCKS]
-    if cmp_stocks_name not in stocks_names:
+    if cmp_stocks_name not in [*STOCKS]:
         print('Unknown ticker')
         return
     print(get_dict_key(COMPANIES, cmp_stocks_name), STOCKS[cmp_stocks_name])

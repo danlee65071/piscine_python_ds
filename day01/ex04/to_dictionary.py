@@ -1,6 +1,3 @@
-from collections import defaultdict
-
-
 def to_dictionary():
     list_of_tuples = [
         ('Russia', '25'),
@@ -24,12 +21,15 @@ def to_dictionary():
         ('Austria', '14'),
         ('Israel', '12')
     ]
-    dict_res = defaultdict(list)
+    dict_res = dict()
     for el in list_of_tuples:
-        dict_res[el[1]].append(el[0])
+        if el[1] not in dict_res:
+            dict_res[el[1]] = [el[0]]
+        else:
+            dict_res[el[1]].append(el[0])
     for key_d, vals_d in dict_res.items():
         for val in vals_d:
-            print('\'{}\' : \'{}\''.format(key_d, val))
+            print(f'\'{key_d}\' : \'{val}\'')
 
 
 if __name__ == '__main__':

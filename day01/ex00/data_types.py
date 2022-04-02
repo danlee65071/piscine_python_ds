@@ -7,15 +7,14 @@ def data_types():
     dict_var = dict()
     tuple_var = tuple()
     set_var = set()
-    print('[{}, {}, {}, {}, {}, {}, {}, {}]'.format(
-        type(int_var).__name__, 
-        type(str_var).__name__, 
-        type(float_var).__name__,
-        type(bool_var).__name__,
-        type(list_var).__name__,
-        type(dict_var).__name__,
-        type(tuple_var).__name__,
-        type(set_var).__name__))
+    print(f'[{type(int_var).__name__}, ' +
+            f'{type(str_var).__name__},  ' +
+            f'{type(float_var).__name__}, '+
+            f'{type(bool_var).__name__}, ' +
+            f'{type(list_var).__name__}, ' +
+            f'{type(dict_var).__name__}, ' +
+            f'{type(tuple_var).__name__}, ' +
+            f'{type(set_var).__name__}]')
 
 
 if __name__ == '__main__':

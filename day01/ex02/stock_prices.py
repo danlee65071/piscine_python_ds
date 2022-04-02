@@ -18,19 +18,11 @@ def stock_prices():
     }
     if len(sys.argv) != 2:
         return
-    input = sys.argv[1].lower()
-    cmp_name = ''
-    for i in range(len(input)):
-        if i == 0:
-            cmp_name += input[i].upper()
-        else:
-            cmp_name += input[i]
-    cmps_names = [*COMPANIES]
-    if cmp_name not in cmps_names:
+    cmp_name = sys.argv[1].lower().capitalize()
+    if cmp_name not in [*COMPANIES]:
         print('Unknown company')
         return
-    cmp_stock_name = COMPANIES[cmp_name]
-    print(STOCKS[cmp_stock_name]) 
+    print(STOCKS[COMPANIES[cmp_name]]) 
     
 
 
