@@ -5,7 +5,6 @@ curl https://api.hh.ru/vacancies/\?text\=data+scientist\&search_field\=name\&per
 < filter.jq jq -r '(map(keys_unsorted) | add | .[0:5]) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv' > hh.csv
 rm -rf hh.json
 rm -rf filter.jq
-rm -rf hh_sorted.csv
 < hh.csv head -n 1 > hh_sorted.csv
 < hh.csv tail -n20 | sort -t , -k2 -k1 >> hh_sorted.csv
 rm -rf hh.csv
