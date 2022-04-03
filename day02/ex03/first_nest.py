@@ -1,4 +1,3 @@
-import fractions
 import sys
 import os
 
