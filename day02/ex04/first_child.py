@@ -1,5 +1,5 @@
 import sys
-from random import randint, random
+from random import randint
 
 
 class Research:
